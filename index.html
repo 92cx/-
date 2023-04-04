@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <title>I Chen的主站</title>
+    <meta name="theme-color" content="#111820" />
+<style>
+  video#background-video {
+    position: fixed;
+    right: ;
+    bottom: ;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+</style>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      [x-cloak] {
+        display: none;
+      }
+
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+          "Hiragino Sans GB", "Heiti SC",1 "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
+          "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        font-family: "lucida grande", "lucida sans unicode", lucida, helvetica,
+          "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei",
+          sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, Tahoma, Arial,
+          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-family: -apple-system, "Helvetica Neue", Helvetica, Arial,
+          "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei",
+          "Microsoft Yahei", sans-serif;
+        /* 选中 */
+        font-family: Tahoma, Arial, "PingFang SC", "Hiragino Sans GB",
+          "Microsoft YaHei", sans-serif;
+        -webkit-tap-highlight-color: transparent;
+        background-color: #383a3f;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+
+      main {
+        color: #efefef;
+        width: 82%;
+        max-width: 720px;
+        min-width: 300px;
+        padding: 1rem;
+        border-radius: 5px;
+        font-size: 1.08rem;
+      }
+
+      .avatar {
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        border: 4.5px solid #efefef;
+        margin: auto;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.429);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .avatar:hover {
+        border-color: #696eff;
+      }
+
+      .whoami {
+        color: #353535;
+        padding: 14px 18px;
+        border-radius: 5px;
+        box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.23);
+        background-color: rgba(208, 208, 208, 0.9);
+      }
+
+      a {
+        display: inline-block;
+        color: #1a538b;
+        margin-right: 0.5rem;
+      }
+
+      a:hover {
+        color: #133b62;
+      }
+    </style>
+    <script
+      defer
+      referrerpolicy="no-referrer"
+      src="https://cdn.bootcdn.net/ajax/libs/alpinejs/3.10.5/cdn.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <main>
+      <div
+        class="avatar"
+        @click="location.reload();"
+        x-data="{url:'img/1.jpeg',loaded:false}"
+        x-init="const img=new Image();img.src=url;img.onload=()=>(loaded=true);"
+        :style="loaded?`background-image:url(${url});`:''"
+        x-text="loaded?'':'I Chen'"
+      >
+        I Chen
+      </div>
+      <div class="whoami">
+        <p>
+          我收集了了一些小东西，也许它们能够帮助到你。
+        </p><br />
+        <p>
+          <a target="_blank" href="https://ichen.ink/release/">永久地址发布页</a>
+          <a target="_blank" href="https://ichen.ink/box/">tvbox接口地址</a>
+		  <a target="_blank" href="https://ichenczh.lanzouj.com/iMxeC0qcithi?webpage=BTQAYQFkBGBUNAZiBGIANVE6VGZXdFNgUmUGNlw0AzYHP1cwXTVUOAMpB2A_c">tvbox下载</a>
+		  <a target="_blank" href="https://developer.lanzoug.com/file/?CG5Qbg08BDVSW1RsUGVUOAE+VGxeYlE/UjRRJFVhU3wBNlF8CXIENlFuAjhTYgVbUGMCY189CzFXaQMzVz1bbwg6UDINZQR2UmJUcVA5VGIBblRoXjNRYFJjUW5VOFN0AXFRdglpBGJRNwJmUzUFK1A7AjZfLws4V2kDKlcyW2sIPFA1DTYEYVI2VDRQN1RkAT9UaF4xUTFSMFE2VTlTMwEzUTAJNgRoUTYCY1M/BTNQOwI0XzgLMFdiA2BXJVttCHJQIQ0lBCNSYVRwUG1UMQFmVGNeMFFkUmZRZ1UxU2oBJ1FyCT0EPVFiAjJTOgU1UDwCP18wCz9XYgM3Vz1baAgwUCkNfgR2UmJUblBzVGgBalRnXjdRa1JtUWFVPlNlAThRNwlyBCVRdwIjUzoFNVA8AjFfOAsxV2YDMlc/W2wIOFAhDSUEOVJ0VD9QNlRiAXVUYF45UWRSe1FmVTpTZAEvUTcJbQRo">WinClash</a>
+		  <a target="_blank" href="https://developer.lanzoug.com/file/?UDYHOQ4/U2JWXwoyAjdXO1ZpAjoDH1Q6UjQEcVJmBCgHRlBpCjMCJAM6AD8ENFB/UmkCd1BkASUKa1Y5VWUDZ1APBzkON1M6VjgKZQJjV2RWNQI1A25UblJzBGRSfQQ4BzRQMgpmAmEDZABnBGlQaFIuAndQfwE+Cj9WYFU7AzBQfwdhDmJTKFYxCmUCeVc1VmoCNwNsVGRSZwQ6UjcEYAc2UDIKZAI0A20ANAQ1UGBSMAI0UGsBYgo+VmdVOQM3UGEHYA5kUzJWZAplAjdXeFZtAncDN1RwUiAEcVJrBHcHblBjCmoCZANkAGEEY1BhUjACP1ApAXcKZFY9VWwDZFBtB2EOZVM/VjAKagJkV2RWOwI3A29UeFJ7BCRSaARpB3BQOgpmAmADYgBgBGdQYVI9AjNQPwE3CitWJVV5A3VQbQdhDmVTMVY4CmQCZFdvVjoCMQNkVHBSIARrUn4EOAc1UDAKeQJnA20AYQR+UGBSOwIxUCEBMgo0Vmg=">AndroidClash</a>
+          <a target="_blank" href="https://developer.lanzoug.com/file/?CW9Rb1xtBjcGDwQ8BDFQPAQ7Bz9WXQFiC2FbLVRtB3QEaVJqCjlXaAEyAi0LAAA1UldUYFM4VgsCNVILVTlTfAlqUXRceQZ0BjYEOwQ8UDQEAQdrVm0BPgs9W21UMQcyBDVSNgpgVzIBbgJyCzkAclI1VGBTOFZiAjxSYVU9U2cJL1F2XHEGbwZiBGIEYlBiBHEHMlY9ASwLPFtpVCcHNgRnUj0KNFdhATQCYQs7AGdSblQwUzpWMAI8UmdVMVNmCTlRZ1xnBmEGZAQ0BGFQZgRrBzNWOQE3CztbZFRuBygEZ1J3Ci9XJQEiAicLOgBzUmFUNVMxVmYCNFJjVTpTYgkxUT5cJwYmBjkEPwQ1UDcEYwczVj8BOws8W2tUOgc0BDxSNApjVy0BeQJyCzkAbVJ/VGxTPFZyAnBSJFV+U28JOFEwXDkGYgZmBGAEYVBmBGcHNVYvAXYLZVstVDUHNAQzUisKZlc7AWACegtuADJSPlR/Uz1WbQI9">Tampermonkey</a>  
+		  
+		  
+		  <br />
+		  		  <br />
+          <a target="_blank" href="http://www.hostbuf.com/downloads/finalshell_install.exe">finalshell</a>
+          <a target="_blank" href="https://download1.dcloud.net.cn/download/HBuilderX.3.7.9.20230324.zip">HBuilderX</a>
+		  <a target="_blank" href="https://experiments-alicdn.sparanoid.net/7z/7z2201-x64.exe">7z</a>
+		  <a target="_blank" href="https://www.internetdownloadmanager.cn/download">IDM</a>
+		  <a target="_blank" href="https://ichen.ink/TikTok/">TikTok</a>
+		  <a target="_blank" href="https://ichen.ink/GithubDesktop/">GithubDesktop</a>
+        </p>
+      </div>
+    </main>
+	<video
+	  id="background-video" 
+	  autoplay 
+	  loop 
+	  muted 
+	  x-data="{loaded:true}" 
+	  x-init="$el.onloadeddata=()=>(loaded=true);" 
+	  :style="loaded?'opacity:1;':''"
+	>
+	  <source src="video/1.mp4" type="video/mp4" />
+	</video>
+  </body>
+</html>
