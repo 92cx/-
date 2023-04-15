@@ -119,7 +119,7 @@
       <div
         class="avatar"
         @click="location.reload();"
-        x-data="{url:'img/1.jpeg',loaded:false}"
+        x-data="{url:'https://ichen.ink/-/img/logo.php',loaded:false}"
         x-init="const img=new Image();img.src=url;img.onload=()=>(loaded=true);"
         :style="loaded?`background-image:url(${url});`:''"
         x-text="loaded?'':'I Chen'"
@@ -160,7 +160,7 @@
 	  x-init="$el.onloadeddata=()=>(loaded=true);" 
 	  :style="loaded?'opacity:1;':''"
 	>
-	  <source src="video/1.mp4" type="video/mp4" />
+	  <source src="https://ichen.ink/-/video/video.php" type="video/mp4" />
 	</video>
   </body>
 </html>
