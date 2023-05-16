@@ -1,40 +1,117 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="utf-8">
-    <title>阿辰 | Biu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="icon" href="assets/img/icon.png">
-</head>
-<body>
-	<video id="background-video" autoplay loop muted x-data="{loaded:true}" x-init="$el.onloadeddata=()=>(loaded=true);" :style="loaded?'opacity:1;':''">
-	  <source src="https://ichenc.github.io/-/video/xx/80a22738a3121beab8827be30125a09f_preview .mp4" type="video/mp4" /></video>
-	  <!-- <source src="https://ichenc.github.io/-/video/xx/1607089862000_9Amso.mp4" type="video/mp4" /></video> -->
-<main id="rin-main">
-	<div id="rin-headimg"></div> 
-    <div class="rin-name">阿&nbsp;&nbsp;辰</div>
-	<hr width="160">
-<p id="hitokoto">
-  <a id="hitokoto_text">:D 获取中...</a>
-</p>
-    <div class="rin-tr"></div>
-    <a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize" href="https://chat.ichen.ink/">CHAT</a>
-	<a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize" href="https://bing.ichen.ink/">壁纸</a>
-    <a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize" href="https://ichen.ink/-/">应用</a>
-<a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize" href="https://ichen.ink/-/greasyfork/">插件</a>
-	<a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize" href="https://nav.ichen.ink/">导航</a>
-	<a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize" href="https://ichen.ink/demo/">DEMO</a>
-</main>
-<footer id="rin-footer">
-      <div class="copy"> © 2023 <a href="https://icp.gov.moe/?keyword=20230202" target="_blank">萌ICP备20230202号</a>
-</footer>
-</body>
-<script>
-  fetch('https://v1.hitokoto.cn')
-    .then(response => response.json())
-    .then(data => {const hitokoto = document.querySelector('#hitokoto_text')
-      hitokoto.innerText = data.hitokoto})
-    .catch(console.error)
-</script>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Chen Home">
+		<meta name="keywords" content="Chen,Homepage">
+		<meta name="author" content="Chen">
+		<title>阿晨 - Biu</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/onlinewebfonts.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/vno.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/iconfont.css">
+		<link rel="apple-touch-icon" href="assets/img/logo/icon.png">
+		<link rel="icon" href="assets/img/logo/favicon.ico">
+	</head>
+
+	<body>
+		<span class="mobile btn-mobile-menu">
+			<i class="social iconfont icon-list btn-mobile-menu__icon"></i>
+			<i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
+		</span>
+		<header id="panel" class="panel-cover">
+			<div class="panel-main">
+				<div class="panel-main__inner panel-inverted">
+					<div class="panel-main__content">
+						<div class="ih-item circle effect right_to_left">
+							<a href="#" title="" class="blog-button">
+								<div class="img"><img src="assets/img/logo/logo.jpeg" alt="img"
+										class="js-avatar iUp profilepic"></div>
+								<div class="info iUp">
+									<div class="info-back">
+										<h2>迎难</h2>
+										<p>而上</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<h1 class="panel-cover__title panel-title iUp">
+							<a href="#" title="Chen Home">Chen</a>
+						</h1>
+						<p class="panel-cover__subtitle panel-subtitle iUp">On the way</p>
+						<hr class="panel-cover__divider iUp" />
+						<p id="description" class="panel-cover__description iUp">如何得与凉风约, 不共尘沙一并来!
+							<br />
+							<strong>-「中牟道中」</strong>
+						</p>
+						<div class="navigation-wrapper iUp">
+							<div>
+								<nav class="cover-navigation cover-navigation--primary">
+									<ul class="navigation">
+										<li class="navigation__item">
+										    <a href="https://ichen.ink/" class="blog-button"target="_blank">首页</a>
+										</li>
+										<li class="navigation__item">
+											<a href="https://chat.ichen.ink/" class="blog-button" target="_blank">ChatGPT</a>
+										</li>
+										<li class="navigation__item">
+											<a href="https://bing.ichen.ink/" class="blog-button" target="_blank">壁纸</a>
+										</li>
+										<li class="navigation__item">
+											<a href="https://ichen.ink/demo/" class="blog-button">demo</a>
+										</li>
+										<li class="navigation__item">
+											<a href="https://nav.ichen.ink/" class="blog-button" target="_blank">网址集</a>
+										</li>
+
+									</ul>
+								</nav>
+							</div>
+							<div class="iUp">
+								<nav class="cover-navigation navigation--social">
+									<ul class="navigation">
+										<li class="navigation__item">
+											<a href="https://github.com/ichenc/" title="github" target="_blank">
+												<i class='social iconfont icon-github'></i>
+												<span class="label">github</span>
+											</a>
+										</li>
+										<li class="navigation__item">
+											<!-- 加密的邮箱地址, 请自行修改, 或者改用下方的明文方式 -->
+											<a href="javascript:decryptEmail('aWNoZW5jQDE2My5jb20=');" title="email">
+												<!-- <a href="test@test.com" title="email"> -->
+												<i class='social iconfont icon-email'></i>
+												<span class="label">email</span>
+											</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-cover--overlay cover-slate"></div>
+			</div>
+
+
+		</header>
+		<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/json/images.json?cb=getBingImages"></script>
+	</body>
 </html>
+
+
+<script>
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'G-4L0GELWRT2');
+</script>

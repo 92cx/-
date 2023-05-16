@@ -1,7 +1,7 @@
 <?php
 
 // 获取本地图片文件夹目录
-$dir = 'mp4/';
+$dir = 'x/';
 
 // 获取图片文件夹中所有的图片文件
 $files = glob($dir . "*.{mp4}", GLOB_BRACE);
