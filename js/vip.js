@@ -168,14 +168,24 @@ const superVip = (function() {
 				"url": "https://api.jiexi.la/?url="
 			},
 			{
-				"name": "维多解析",
+				"name": "人人迷",
 				"type": "1,3",
-				"url": "http://jx.ivito.cn/?url="
+				"url": "https://jx.blbo.cc:4433/?url="
 			},
 			{
-				"name": "bl解析",
+				"name": "纯净",
 				"type": "1,3",
-				"url": "https://vip.bljiex.com/?v="
+				"url": "https://im1907.top/?jx="
+			},
+			{
+				"name": "爱豆",
+				"type": "1,3",
+				"url": "https://jx.aidouer.net/?url="
+			},
+			{
+				"name": "CHok",
+				"type": "1,3",
+				"url": "https://www.gai4.com/?url="
 			},
  
 		],
