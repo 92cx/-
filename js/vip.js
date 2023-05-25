@@ -1,28 +1,25 @@
 // ==UserScript==
 // @name              全网VIP视频【免登录去除广告】
 // @namespace         http://tampermonkey.net/
-// @version           1.0.1
-// @description       全网VIP视频解析【免登录去除广告】，放心使用长期更新。支持：爱优腾芒、B站等其它网站；
+// @version           1.0.2
+// @description       全网VIP视频解析【免登录去除广告】，支持：爱优腾芒、B站等其它网站；
+// @description       更新日期：2023.5.25 17：37（以后每月1日维护更新）
 // @icon              https://ichen.ink/-/assets/img/logo/VIP.ico
 // @include           *://*.iqiyi.com/v_*
 // @include           *://*.iqiyi.com/w_*
 // @include           *://*.iqiyi.com/a_*
 // @include           *://m.iqiyi.com/*
 // @include           *://m.iqiyi.com/kszt/*
- 
 // @include           *://*.youku.com/v_*
 // @include           *://m.youku.com/alipay_video/*
- 
 // @include           *://v.qq.com/x/cover/*
 // @include           *://v.qq.com/x/page/*
 // @include           *://v.qq.com/tv/*
 // @include           *://m.v.qq.com/x/cover/*
 // @include           *://m.v.qq.com/x/page/*
 // @include           *://m.v.qq.com/*
- 
 // @include           *://*.mgtv.com/b/*
 // @include           *://m.mgtv.com/b/*
- 
 // @include           *://*.bilibili.com/video/*
 // @include           *://*.bilibili.com/bangumi/play/*
 // @include           *://m.bilibili.com/video/*
@@ -44,9 +41,9 @@
 // @charset		      UTF-8
 // @license           GPL License
 // ==/UserScript==
- 
+
 const util = (function() {
- 
+
 	function findTargetElement(targetContainer) {
 		const body = window.document;
 		let tabContainer;
@@ -59,7 +56,7 @@ const util = (function() {
 					startTimestamp = timestamp;
 				}
 				const elapsedTime = timestamp - startTimestamp;
- 
+
 				if (elapsedTime >= 500) {
 					GM_log("查找元素：" + targetContainer + "，第" + tryTime + "次");
 					tabContainer = body.querySelector(targetContainer);
@@ -75,11 +72,11 @@ const util = (function() {
 					requestAnimationFrame(tryFindElement);
 				}
 			}
- 
+
 			requestAnimationFrame(tryFindElement);
 		});
 	}
- 
+
 	function urlChangeReload() {
 		const oldHref = window.location.href;
 		let interval = setInterval(() => {
@@ -90,7 +87,7 @@ const util = (function() {
 			}
 		}, 500);
 	}
- 
+
 	function reomveVideo() {
 		setInterval(() => {
 			for (let video of document.getElementsByTagName("video")) {
@@ -103,7 +100,7 @@ const util = (function() {
 			}
 		}, 500);
 	}
- 
+
 	function syncRequest(option) {
 		return new Promise((resolve, reject) => {
 			option.onload = (res) => {
@@ -115,7 +112,7 @@ const util = (function() {
 			GM_xmlhttpRequest(option);
 		});
 	}
- 
+
 	return {
 		req: (option) => syncRequest(option),
 		findTargetEle: (targetEle) => findTargetElement(targetEle),
@@ -123,10 +120,10 @@ const util = (function() {
 		reomveVideo: () => reomveVideo()
 	}
 })();
- 
- 
+
+
 const superVip = (function() {
- 
+
 	const _CONFIG_ = {
 		isMobile: navigator.userAgent.match(
 			/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/i),
@@ -140,13 +137,7 @@ const superVip = (function() {
 				"type": "1,3",
 				"url": "https://jx.jsonplayer.com/player/?url="
 			},
-			{
-				"name": "Player-JY",
-				"type": "1,3",
-				"url": "https://jx.playerjy.com/?url="
-			},
- 
- 
+
 			{
 				"name": "OK",
 				"type": "1,3",
@@ -167,27 +158,6 @@ const superVip = (function() {
 				"type": "1,3",
 				"url": "https://api.jiexi.la/?url="
 			},
-			{
-				"name": "人人迷",
-				"type": "1,3",
-				"url": "https://jx.blbo.cc:4433/?url="
-			},
-			{
-				"name": "纯净",
-				"type": "1,3",
-				"url": "https://im1907.top/?jx="
-			},
-			{
-				"name": "爱豆",
-				"type": "1,3",
-				"url": "https://jx.aidouer.net/?url="
-			},
-			{
-				"name": "CHok",
-				"type": "1,3",
-				"url": "https://www.gai4.com/?url="
-			},
- 
 		],
 		playerContainers: [
 			{
@@ -259,7 +229,7 @@ const superVip = (function() {
 				name: "Default",
 				displayNodes: []
 			},
- 
+
 		]
 	};
 	class BaseConsumer {
@@ -273,7 +243,7 @@ const superVip = (function() {
 					.then((container) => this.postHandle(container));
 			}
 		}
- 
+
 		preHandle(container) {
 			_CONFIG_.currentPlayerNode.displayNodes.forEach((item, index) => {
 				util.findTargetEle(item)
@@ -282,7 +252,7 @@ const superVip = (function() {
 			});
 			return new Promise((resolve, reject) => resolve(container));
 		}
- 
+
 		generateElement(container) {
 			GM_addStyle(`
                         #${_CONFIG_.vipBoxId} {cursor:pointer; position:fixed; top:120px; left:0px; z-index:9999999; text-align:left;}
@@ -296,14 +266,14 @@ const superVip = (function() {
                         #${_CONFIG_.vipBoxId} .vip_list::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#ff7f50;}
                         #${_CONFIG_.vipBoxId} li.selected{color:#ff7f50; border:1px solid #ff7f50;}
 						`);
- 
+
 			if (_CONFIG_.isMobile) {
 				GM_addStyle(`
                     #${_CONFIG_.vipBoxId} {top:300px;}
                     #${_CONFIG_.vipBoxId} .vip_list {width:300px;}
                     `);
 			}
- 
+
 			let type_1_str = "";
 			let type_2_str = "";
 			let type_3_str = "";
@@ -321,9 +291,9 @@ const superVip = (function() {
 						`<li class="tc-li" title="${item.name}" data-index="${index}">${item.name}</li>`;
 				}
 			});
- 
+
 			let autoPlay = !!GM_getValue(_CONFIG_.autoPlayerKey, null) ? "开" : "关";
- 
+
 			$(container).append(`
                 <div id="${_CONFIG_.vipBoxId}">
                     <div class="vip_icon">
@@ -336,7 +306,7 @@ const superVip = (function() {
                                     <div style="clear:both;"></div>
                                 </ul>
                             </div>
- 
+
 						<div>
 						    <h3 style="color:#ff7f50; font-weight: bold; font-size: 16px; padding:5px 0px;">[弹窗播放]</h3>
 						    <ul>
@@ -357,7 +327,7 @@ const superVip = (function() {
                 </div>`);
 			return new Promise((resolve, reject) => resolve(container));
 		}
- 
+
 		bindEvent(container) {
 			const vipBox = $(`#${_CONFIG_.vipBoxId}`);
 			if (_CONFIG_.isMobile) {
@@ -366,7 +336,7 @@ const superVip = (function() {
 				vipBox.find(".vip_icon").on("mouseover", () => vipBox.find(".vip_list").show());
 				vipBox.find(".vip_icon").on("mouseout", () => vipBox.find(".vip_list").hide());
 			}
- 
+
 			let _this = this;
 			vipBox.find(".vip_list .nq-li").each((liIndex, item) => {
 				item.addEventListener("click", () => {
@@ -390,7 +360,7 @@ const superVip = (function() {
 					});
 				});
 			});
- 
+
 			//右键移动位置
 			vipBox.mousedown(function(e) {
 				if (e.which !== 3) {
@@ -401,19 +371,19 @@ const superVip = (function() {
 				const positionDiv = $(this).offset();
 				let distenceX = e.pageX - positionDiv.left;
 				let distenceY = e.pageY - positionDiv.top;
- 
+
 				$(document).mousemove(function(e) {
 					let x = e.pageX - distenceX;
 					let y = e.pageY - distenceY;
 					const windowWidth = $(window).width();
 					const windowHeight = $(window).height();
- 
+
 					if (x < 0) {
 						x = 0;
 					} else if (x > windowWidth - vipBox.outerWidth(true) - 100) {
 						x = windowWidth - vipBox.outerWidth(true) - 100;
 					}
- 
+
 					if (y < 0) {
 						y = 0;
 					} else if (y > windowHeight - vipBox.outerHeight(true)) {
@@ -432,7 +402,7 @@ const superVip = (function() {
 			});
 			return new Promise((resolve, reject) => resolve(container));
 		}
- 
+
 		autoPlay(container) {
 			const vipBox = $(`#${_CONFIG_.vipBoxId}`);
 			vipBox.find("#vip_auto").on("click", function() {
@@ -448,13 +418,13 @@ const superVip = (function() {
 					window.location.reload();
 				}, 200);
 			});
- 
+
 			if (!!GM_getValue(_CONFIG_.autoPlayerKey, null)) {
 				this.selectPlayer(container);
 			}
 			return new Promise((resolve, reject) => resolve(container));
 		}
- 
+
 		selectPlayer(container) {
 			let index = GM_getValue(_CONFIG_.autoPlayerVal, 2);
 			let autoObj = _CONFIG_.videoParseList[index];
@@ -468,7 +438,7 @@ const superVip = (function() {
 				}, 2500);
 			}
 		}
- 
+
 		showPlayerWindow(videoObj) {
 			util.findTargetEle(_CONFIG_.currentPlayerNode.container)
 				.then((container) => {
@@ -491,7 +461,7 @@ const superVip = (function() {
 					}
 				});
 		}
- 
+
 		postHandle(container) {
 			if (!!GM_getValue(_CONFIG_.autoPlayerKey, null)) {
 				util.urlChangeReload();
@@ -509,11 +479,11 @@ const superVip = (function() {
 				}, 1000);
 			}
 		}
- 
+
 	}
- 
+
 	class DefaultConsumer extends BaseConsumer {}
- 
+
 	return {
 		start: () => {
 			GM_setValue(_CONFIG_.flag, null);
@@ -529,9 +499,9 @@ const superVip = (function() {
 			targetConsumer.parse();
 		}
 	}
- 
+
 })();
- 
+
 (function() {
 	superVip.start();
 })();
