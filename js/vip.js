@@ -137,17 +137,6 @@ const superVip = (function() {
 				"type": "1,3",
 				"url": "https://jx.jsonplayer.com/player/?url="
 			},
-
-			{
-				"name": "OK",
-				"type": "1,3",
-				"url": "https://api.okjx.cc:3389/jx.php?url="
-			},
-			{
-				"name": "OKJX",
-				"type": "1,3",
-				"url": "https://okjx.cc/?url="
-			},
 			{
 				"name": "Ckplayer",
 				"type": "1,3",
