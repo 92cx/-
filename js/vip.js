@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name              全网VIP视频【免登录去除广告】
 // @namespace         http://tampermonkey.net/
-// @version           1.0.3
+// @version           1.0.4
 // @description       全网VIP视频解析【免登录去除广告】，支持：爱优腾芒、B站等其它网站；
-// @description       更新日期：2023.6.5 18：42（以后每月1日维护更新）
+// @description       更新日期：2023.6.12 22：58（以后每月1日维护更新）
 // @icon              https://ichen.ink/-/assets/img/logo/VIP.ico
 // @include           *://*.iqiyi.com/v_*
 // @include           *://*.iqiyi.com/w_*
