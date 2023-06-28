@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name              全网VIP视频【免登录去除广告】
 // @namespace         http://tampermonkey.net/
-// @version           1.0.4
+// @version           1.0.5
 // @description       全网VIP视频解析【免登录去除广告】，支持：爱优腾芒、B站等其它网站；
-// @description       更新日期：2023.6.12 22：58（以后每月1日维护更新）
+// @description       更新日期：2023.6.28 17：20（以后每月底维护更新）
 // @icon              https://ichen.ink/-/assets/img/logo/VIP.ico
 // @include           *://*.iqiyi.com/v_*
 // @include           *://*.iqiyi.com/w_*
@@ -146,6 +146,26 @@ const superVip = (function() {
 				"name": "解析la",
 				"type": "1,3",
 				"url": "https://api.jiexi.la/?url="
+			},
+            {
+				"name": "蛋蛋解析",
+				"type": "1,3",
+				"url": "https://ddjx.cc/?url="
+			},
+            {
+				"name": "夜幕",
+				"type": "1,3",
+				"url": "https://www.yemu.xyz/?url="
+			},
+            {
+				"name": "YT",
+				"type": "1,3",
+				"url": "https://jx.yangtu.top/?url="
+			},
+            {
+				"name": "RDHK",
+				"type": "1,3",
+				"url": "https://jx.rdhk.net/?v="
 			},
 			{
 				"name": "阿晨解析",
