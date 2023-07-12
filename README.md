@@ -5,6 +5,7 @@
 
 第一步：下载管理器
 <a href="https://ichen.ink/-/js/youhou.crx">下载地址</a> <a href="https://ichenczh.lanzoux.com/iO8BT09x73mf">备用地址</a>
+
 第二步：安装管理器
 <li><a href="https://www.google.cn/chrome/next-steps.html?installdataindex=empty&statcb=1&defaultbrowser=0#">Chrome</a>在地址栏输入`chrome://extensions` 并回车，勾选 **开发者模式** -> 拖动 `*.crx` 文件到页面内。</li>
 <li><a href="https://www.microsoft.com/zh-cn/edge/download?form=MA13FJ">Edge</a>应用商店搜索插件`Tampermonkey`。</li>
@@ -12,6 +13,7 @@
 <li><a href="http://down.360safe.com/se/360se9.1.0.410.exe">360安全浏览器</a>在地址栏输入 `se://extensions` 并回车，拖动`*.crx` 文件到页面内。</li>
 <li><a href="http://down.360safe.com/cse/360cse_7.5.3.308.exe">360极速浏览器</a>在地址栏输入`chrome://myextensions/extensions` 并回车，拖动 `*.crx` 文件到页面内。</li>
 <li><a href="http://www.firefox.com.cn/download/thanks/">Firefox</a>应用商店搜索插件`Tampermonkey`。</li>
+
 第三步：添加脚本
 <li>添加代码到管理器</li>
 <li>Ctrl+S保存</li>
