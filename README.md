@@ -14,10 +14,15 @@
 <li><a href="http://down.360safe.com/cse/360cse_7.5.3.308.exe">360极速浏览器</a>在地址栏输入`chrome://myextensions/extensions` 并回车，拖动 `*.crx` 文件到页面内。</li>
 <li><a href="http://www.firefox.com.cn/download/thanks/">Firefox</a>应用商店搜索插件`Tampermonkey`。</li>
 
+
 第三步：添加脚本
+
 
 <li>添加代码到管理器</li>
 <li>Ctrl+S保存</li>
+
+
+
 
 
 现在您可以访问这个用户脚本所针对的网站，脚本应该已经自动启动和生效。
