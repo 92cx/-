@@ -1,121 +1,129 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
 	<head>
-
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Chen Home">
-		<meta name="keywords" content="Chen,Homepage">
-		<meta name="author" content="Chen">
-		<title>阿晨 - Biu</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/onlinewebfonts.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/vno.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/iconfont.css">
-		<link rel="apple-touch-icon" href="assets/img/logo/icon.png">
-		<link rel="icon" href="assets/img/logo/favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+		<title>阿晨自用插件</title>
+		<link rel="icon" href="https://ichen.ink/-/assets/img/logo/VIP.ico">
+		<script type="text/javascript" src="mayiui/mayiui.js"></script>
+		<link rel="stylesheet" href="mayiui/mayiui.css">
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				background-image: url('https://cn.bing.com/th?id=OHR.ShyFive_EN-US4337641438_UHD.jpg');
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+			}
+
+			header {
+				text-align: center;
+				margin-bottom: 30px;
+			}
+
+			nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			nav li {
+				margin: 20px;
+				border: 3px solid #000000;
+				border-radius: 10px;
+				padding: 10px;
+				text-align: center;
+				transition: all 0.3s ease;
+			}
+
+			nav li:hover {
+				background-color: #000000;
+			}
+
+			nav li:hover a {
+				color: #ff0000;
+			}
+
+			a {
+				text-decoration: none;
+				color: #000000;
+				transition: all 0.3s ease;
+			}
+
+			nav {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+			}
+
+			ul {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				margin: 10px 0;
+				text-align: center;
+			}
+
+			h5 {
+				font-size: 24px;
+				color: #ffffff;
+				margin: 0;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+
+			footer {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				color: #000000;
+				text-align: center;
+				padding: 10px 0;
+				font-size: 12px;
+			}
+		</style>
 	</head>
-
 	<body>
-		<span class="mobile btn-mobile-menu">
-			<i class="social iconfont icon-list btn-mobile-menu__icon"></i>
-			<i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
-		</span>
-		<header id="panel" class="panel-cover">
-			<div class="panel-main">
-				<div class="panel-main__inner panel-inverted">
-					<div class="panel-main__content">
-						<div class="ih-item circle effect right_to_left">
-							<a href="#" title="" class="blog-button">
-								<div class="img"><img src="assets/img/logo/logo.jpeg" alt="img"
-										class="js-avatar iUp profilepic"></div>
-								<div class="info iUp">
-									<div class="info-back">
-										<h2>迎难</h2>
-										<p>而上</p>
-									</div>
-								</div>
-							</a>
-						</div>
-						<h1 class="panel-cover__title panel-title iUp">
-							<a href="#" title="Chen Home">Chen</a>
-						</h1>
-						<p class="panel-cover__subtitle panel-subtitle iUp">On the way</p>
-						<hr class="panel-cover__divider iUp" />
-						<p id="description" class="panel-cover__description iUp">如何得与凉风约, 不共尘沙一并来!
-							<br />
-							<strong>-「中牟道中」</strong>
-						</p>
-						<div class="navigation-wrapper iUp">
-							<div>
-								<nav class="cover-navigation cover-navigation--primary">
-									<ul class="navigation">
-										<li class="navigation__item">
-											<a href="https://ichen.ink/" class="blog-button" target="_blank">首页</a>
-										</li>
-										<li class="navigation__item">
-											<a href="https://chat.ichen.ink/" class="blog-button"
-												target="_blank">ChatGPT</a>
-										</li>
-										<li class="navigation__item">
-											<a href="https://bing.ichen.ink/" class="blog-button" target="_blank">壁纸</a>
-										</li>
-										<li class="navigation__item">
-											<a href="https://ichen.ink/demo/" class="blog-button">demo</a>
-										</li>
-										<li class="navigation__item">
-											<a href="https://nav.ichen.ink/" class="blog-button" target="_blank">网址集</a>
-										</li>
-										<li class="navigation__item">
-											<a href="https://ichen.ink/-/assets/vip/vip.html" class="blog-button"
-												target="_blank">浏览器</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
-							<div class="iUp">
-								<nav class="cover-navigation navigation--social">
-									<ul class="navigation">
-										<li class="navigation__item">
-											<a href="https://github.com/ichenc/" title="github" target="_blank">
-												<i class='social iconfont icon-github'></i>
-												<span class="label">github</span>
-											</a>
-										</li>
-										<li class="navigation__item">
-											<!-- 加密的邮箱地址, 请自行修改, 或者改用下方的明文方式 -->
-											<a href="javascript:decryptEmail('aWNoZW5jQDE2My5jb20=');" title="email">
-												<!-- <a href="test@test.com" title="email"> -->
-												<i class='social iconfont icon-email'></i>
-												<span class="label">email</span>
-											</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="panel-cover--overlay cover-slate"></div>
-			</div>
-
-
+		<header>
+			<h1><a href="assets/a.html">浏览器插件<br />使用教程</a></h1>
 		</header>
-		<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/main.js"></script>
-		<script type="text/javascript" src="assets/json/images.json?cb=getBingImages"></script>
+		<nav>
+			<ul>
+				<li>
+					<h5><a href="https://ichen.ink/-/assets/js/youhou.crx">管理器</a></h5>
+				</li>
+				<li>
+					<h5><a href="https://ichenczh.lanzoux.com/iO8BT09x73mf">管理器</a></h5>
+				</li>
+				<li>
+					<h5><a href="https://ichen.ink/-/assets/js/vip.js">vip影视</a></h5>
+				</li>
+				<li>
+					<h5><a href="https://ichen.ink/-/assets/js/hbgb.js">网络学院</a></h5>
+				</li>
+				<li>
+					<h5><a href="https://ichen.ink/-/assets/js/qg.js">科技强国</a></h5>
+				</li>
+			</ul>
+		</nav>
+		<footer>
+			<h3>2023 - 阿晨</h3>
+		</footer>
 	</body>
 </html>
-
-
-<script>
-	window.dataLayer = window.dataLayer || [];
-
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag('js', new Date());
-
-	gtag('config', 'G-4L0GELWRT2');
-</script>
