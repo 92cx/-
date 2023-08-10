@@ -359,7 +359,7 @@ const superVip = (function() {
 						<br>&nbsp;&nbsp;2、开启自动解析，网页打开后脚本将根据当前选中的解析源自动解析视频。如解析失败，请手动选择不同的解析源尝试
 						<br>&nbsp;&nbsp;3、没有选中解析源将随机选取一个
 						<br>&nbsp;&nbsp;4、如某些网站有会员可以关闭自动解析功能
-                        <br>&nbsp;&nbsp;5、返回首页<a href="https://ichen.ink/" style="color: red; font-size: 16px;">Paper Airplane</a>
+                        <br>&nbsp;&nbsp;5、返回首页<a href="https://ichen.ink/" style="color: red; font-size: 16px;">阿晨算法解析系统</a>
 						</div>
                         </div>
                     </div>
