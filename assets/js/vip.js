@@ -5,7 +5,7 @@
 // @description       全网VIP视频解析【免登录去除广告】，支持：爱优腾芒、B站等其它网站；
 // @description       更新日期：2023.8.10 21：50
 // @description       代码仅供交流学习，下载后请在24小时内删除，不得用于违规违法用途。
-// @icon              https://ichen.ink/-/assets/img/logo/VIP.ico
+// @icon              https://ichen.ink/-/assets/img/logo/vip.ico
 // @include           *://*.iqiyi.com/v_*
 // @include           *://*.iqiyi.com/w_*
 // @include           *://*.iqiyi.com/a_*
