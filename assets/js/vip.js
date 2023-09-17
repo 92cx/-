@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name              全网VIP视频【免登录去除广告】
 // @namespace         http://tampermonkey.net/
-// @version           1.0.8
+// @version           1.0.9
 // @description       全网VIP视频解析【免登录去除广告】，支持：爱优腾芒、B站等其它网站；
-// @description       更新日期：2023.9.9 22：50
+// @description       更新日期：2023.9.18 07：20
 // @description       代码仅供交流学习，下载后请在24小时内删除，不得用于违规违法用途。
 // @icon              https://ichen.ink/-/assets/img/logo/vip.ico
 // @include           *://*.iqiyi.com/v_*
@@ -148,7 +148,11 @@ const superVip = (function() {
 				"type": "1,3",
 				"url": "https://www.yemu.xyz/?url="
 			},
-
+            {
+				"name": "暂不支持",
+				"type": "2",
+				"url": "https://ichen.ink/?url="
+			},
             {
 				"name": "8090g",
 				"type": "1,3",
@@ -265,18 +269,19 @@ const superVip = (function() {
 		}
 
 		generateElement(container) {
-			GM_addStyle(`
+           GM_addStyle(`
                         #${_CONFIG_.vipBoxId} {cursor:pointer; position:fixed; top:120px; left:0px; z-index:9999999; text-align:left;}
-                        #${_CONFIG_.vipBoxId} .img_box{width:32px; height:32px;line-height:32px;text-align:center;background-color:#ff7f50;margin:10px 0px;}
+                        #${_CONFIG_.vipBoxId} .img_box{width:32px; height:32px;line-height:32px;text-align:center;background-color:#66CDAA;margin:10px 0px;}
                         #${_CONFIG_.vipBoxId} .vip_list {display:none; position:absolute; border-radius:5px; left:32px; top:0; text-align:center; background-color: #3f4149; border:1px solid white;padding:10px 0px; width:380px; max-height:400px; overflow-y:auto;}
                         #${_CONFIG_.vipBoxId} .vip_list li{border-radius:2px; font-size:12px; color:#DCDCDC; text-align:center; width:calc(25% - 14px); line-height:21px; float:left; border:1px solid gray; padding:0 4px; margin:4px 2px;overflow:hidden;white-space: nowrap;text-overflow: ellipsis;-o-text-overflow:ellipsis;}
-                        #${_CONFIG_.vipBoxId} .vip_list li:hover{color:#1c84c6; border:1px solid #1c84c6;}
+                        #${_CONFIG_.vipBoxId} .vip_list li:hover{color:#7FFFD4; border:1px solid #7FFFD4;}
                         #${_CONFIG_.vipBoxId} .vip_list ul{padding-left: 10px;}
                         #${_CONFIG_.vipBoxId} .vip_list::-webkit-scrollbar{width:5px; height:1px;}
-                        #${_CONFIG_.vipBoxId} .vip_list::-webkit-scrollbar-thumb{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#A8A8A8;}
-                        #${_CONFIG_.vipBoxId} .vip_list::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#ff7f50;}
-                        #${_CONFIG_.vipBoxId} li.selected{color:#ff7f50; border:1px solid #ff7f50;}
+                        #${_CONFIG_.vipBoxId} .vip_list::-webkit-scrollbar-thumb{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#A9A9A9;}
+                        #${_CONFIG_.vipBoxId} .vip_list::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2); background:#7FFFD4;}
+                        #${_CONFIG_.vipBoxId} li.selected{color:#7FFFD4; border:1px solid #7FFFD4;}
 						`);
+
 
 			if (_CONFIG_.isMobile) {
 				GM_addStyle(`
@@ -308,30 +313,37 @@ const superVip = (function() {
 			$(container).append(`
                 <div id="${_CONFIG_.vipBoxId}">
                     <div class="vip_icon">
-                        <div class="img_box" title="选择解析源" style="color:red;font-size:16px;font-weight:bold;border-radius:5px;"><span style="color: red;">V</span><span style="color: red;">I</span><span style="color: red;">P</span></div>
+                        <div class="img_box" title="选择解析源" style="color:red;font-size:16px;font-weight:bold;border-radius:5px;"><span style="color: grey;">V</span><span style="color: orange;">I</span><span style="color: grey;">P</span></div>
                         <div class="vip_list">
                             <div>
-                                <h3 style="color:#ff7f50; font-weight: bold; font-size: 16px; padding:5px 0px;">[内嵌播放]</h3>
+                                <h3 style="color:#7FFFD4; font-weight: bold; font-size: 16px; padding:5px 0px;">[内嵌播放]</h3>
                                 <ul>
                                     ${type_1_str}
                                     <div style="clear:both;"></div>
                                 </ul>
                             </div>
-
+                            <div>
+                                <h3 style="color:#7FFFD4; font-weight: bold; font-size: 16px; padding:5px 0px;">[弹窗播放带选集]</h3>
+                                <ul>
+                                    ${type_2_str}
+                                    <div style="clear:both;"></div>
+                                </ul>
+                            </div>
 						<div>
-						    <h3 style="color:#ff7f50; font-weight: bold; font-size: 16px; padding:5px 0px;">[弹窗播放]</h3>
+						    <h3 style="color:#7FFFD4; font-weight: bold; font-size: 16px; padding:5px 0px;">[弹窗播放]</h3>
 						    <ul>
 						        ${type_3_str}
 						        <div style="clear:both;"></div>
 						    </ul>
 						</div>
-						<div style="text-align:left;color:#FFF;font-size:10px;padding:0px 10px;margin-top:10px;">
-						<br>&nbsp;&nbsp;1、自动解析功能默认关闭（自动解析只支持内嵌播放源）
-						<br>&nbsp;&nbsp;2、开启自动解析，网页打开后脚本将根据当前选中的解析源自动解析视频。如解析失败，请手动选择不同的解析源尝试
-						<br>&nbsp;&nbsp;3、没有选中解析源将随机选取一个
-						<br>&nbsp;&nbsp;4、如某些网站有会员可以关闭自动解析功能
-                        <br>&nbsp;&nbsp;5、返回首页<a href="https://ichen.ink/" style="color: red; font-size: 16px;">阿晨算法解析系统</a>
-						</div>
+                            <div style="text-align:left;color:#FFF;font-size:10px;padding:0px 10px;margin-top:10px;">
+                                <b>自动解析功能说明：</b>
+                                <br>&nbsp;&nbsp;1、自动解析功能默认关闭（自动解析只支持内嵌播放源）
+                                <br>&nbsp;&nbsp;2、开启自动解析，网页打开后脚本将根据当前选中的解析源自动解析视频。如解析失败，请手动选择不同的解析源尝试
+                                <br>&nbsp;&nbsp;3、没有选中解析源将随机选取一个
+                                <br>&nbsp;&nbsp;4、如某些网站有会员可以关闭自动解析功能
+                                <br>&nbsp;&nbsp;5、返回<a href="https://ichen.ink/" style="color: red; font-size: 16px;">阿晨算法解析</a>
+                            </div>
                         </div>
                     </div>
                     <div class="img_box" id="vip_auto" style="color:white;font-size:16px;font-weight:bold;border-radius:5px;" title="是否打开自动解析。若自动解析失败，请手动选择其它接口尝试！！">${autoPlay}</div>
