@@ -1,39 +1,39 @@
 // ==UserScript==
 // @name         河北干部网络学院
-// @namespace    http://hebgb.gwypx.com.cn/
+// @namespace    https://www.hebgb.gov.cn/
 // @version      1.0.0
 // @description  代码仅供交流学习，下载后请在24小时内删除，不得用于违规违法用途。
 // @author       阿晨
-// @match        http://hebgb.gwypx.com.cn/*
-// @icon         http://hebgb.gwypx.com.cn/favicon.ico
+// @match        https://www.hebgb.gov.cn/*
+// @icon         https://www.hebgb.gov.cn/favicon.ico
 // @grant        GM_setValue
 // @grant        GM_getValue
 // ==/UserScript==
 var video;
 var href1 = location.href;
 
-if(href1.toString().includes("hebgb.gwypx.com.cn/student/class_detail_course.do")){
+if(href1.toString().includes("www.hebgb.gov.cn/student/class_detail_course.do")){
     GM_setValue("class_detail_course", href1);
     let id=document.getElementsByClassName("hover_btn")[0].onclick.toString().substr(33,9);
     creatElement();
     document.getElementById("chen_div1").onclick=function(){
-        window.open("http://hebgb.gwypx.com.cn/portal/study_play.do?id="+id+"&beisu="+1.5);
+        window.open("https://www.hebgb.gov.cn/portal/study_play.do?id="+id+"&beisu="+1.5);
     }
     document.getElementById("chen_div2").onclick=function(){
-        window.open("http://hebgb.gwypx.com.cn/portal/study_play.do?id="+id+"&beisu="+3);
+        window.open("https://www.hebgb.gov.cn/portal/study_play.do?id="+id+"&beisu="+3);
     }
     document.getElementById("chen_div3").onclick=function(){
-        window.open("http://hebgb.gwypx.com.cn/portal/study_play.do?id="+id+"&beisu="+5);
+        window.open("https://www.hebgb.gov.cn/portal/study_play.do?id="+id+"&beisu="+5);
     }
 	document.getElementById("chen_div4").onclick=function(){
-	    window.open("http://hebgb.gwypx.com.cn/portal/study_play.do?id="+id+"&beisu="+16);
+	    window.open("https://www.hebgb.gov.cn/portal/study_play.do?id="+id+"&beisu="+16);
 	}
     if(GetQueryString("beisu")!=null){
-        location.href="http://hebgb.gwypx.com.cn/portal/study_play.do?id="+id+"&beisu="+GetQueryString("beisu");
+        location.href="https://www.hebgb.gov.cn/portal/study_play.do?id="+id+"&beisu="+GetQueryString("beisu");
     }
 
 }
-if(href1.toString().includes("hebgb.gwypx.com.cn/portal/study_play.do")){
+if(href1.toString().includes("www.hebgb.gov.cn/portal/study_play.do")){
     if(GetQueryString("beisu")!=null){
         setTimeout(function(){
             document.getElementsByClassName("user_choise")[0].click();
@@ -41,7 +41,7 @@ if(href1.toString().includes("hebgb.gwypx.com.cn/portal/study_play.do")){
             video = document.getElementById("course_player");
             video.volume = 0;
             video.play(1);
-            video.playbackRate = GetQueryString("beisu")||1; 
+            video.playbackRate = GetQueryString("beisu")||1;
         },500)
         setInterval(function(){
             if(video.ended){
