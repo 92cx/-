@@ -4,7 +4,7 @@
 浏览器插件是一段代码，它们能够优化您的网页浏览体验。安装之后，有些脚本能为网站添加新的功能，有些能使网站的界面更加易用，有些则能隐藏网站上烦人的部分内容，轻松体验。
 
 第一步：下载管理器
-<a href="https://ichen.ink/-/js/youhou.crx">下载地址</a> <a href="https://ichenczh.lanzoux.com/iO8BT09x73mf">备用地址</a>
+<a href="https://ichen.vip/-/js/youhou.crx">下载地址</a> <a href="https://ichenczh.lanzoux.com/iO8BT09x73mf">备用地址</a>
 
 第二步：安装管理器
 <li><a href="https://www.google.cn/chrome/next-steps.html?installdataindex=empty&statcb=1&defaultbrowser=0#">Chrome</a>在地址栏输入`chrome://extensions` 并回车，勾选 **开发者模式** -> 拖动 `*.crx` 文件到页面内。</li>

@@ -5,7 +5,7 @@
 // @description       全网VIP视频解析【免登录去除广告】，支持：爱优腾芒、B站等其它网站；
 // @description       更新日期：2023.9.18 07：20
 // @description       代码仅供交流学习，下载后请在24小时内删除，不得用于违规违法用途。
-// @icon              https://ichen.ink/-/assets/img/logo/vip.ico
+// @icon              https://ichen.vip/-/assets/img/logo/vip.ico
 // @include           *://*.iqiyi.com/v_*
 // @include           *://*.iqiyi.com/w_*
 // @include           *://*.iqiyi.com/a_*
@@ -151,7 +151,7 @@ const superVip = (function() {
             {
 				"name": "暂不支持",
 				"type": "2",
-				"url": "https://ichen.ink/?url="
+				"url": "https://ichen.vip/?url="
 			},
             {
 				"name": "8090g",
@@ -342,7 +342,7 @@ const superVip = (function() {
                                 <br>&nbsp;&nbsp;2、开启自动解析，网页打开后脚本将根据当前选中的解析源自动解析视频。如解析失败，请手动选择不同的解析源尝试
                                 <br>&nbsp;&nbsp;3、没有选中解析源将随机选取一个
                                 <br>&nbsp;&nbsp;4、如某些网站有会员可以关闭自动解析功能
-                                <br>&nbsp;&nbsp;5、返回<a href="https://ichen.ink/" style="color: red; font-size: 16px;">阿晨算法解析</a>
+                                <br>&nbsp;&nbsp;5、返回<a href="https://ichen.vip/" style="color: red; font-size: 16px;">阿晨算法解析</a>
                             </div>
                         </div>
                     </div>
