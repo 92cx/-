@@ -3,7 +3,7 @@
 // @namespace         http://tampermonkey.net/
 // @version           1.1.0
 // @description       全网VIP视频解析【免登录去除广告】，支持：爱优腾芒、B站等其它网站；
-// @description       更新日期：2024.4.27 20：47
+// @description       更新日期：2024.6.11 00：10
 // @description       代码仅供交流学习，下载后请在24小时内删除，不得用于违规违法用途。
 // @icon              https://ichen.vip/-/assets/img/logo/vip.ico
 // @include           *://*.iqiyi.com/v_*
@@ -143,7 +143,21 @@ const superVip = (function() {
 				"type": "1,3",
 				"url": "https://www.ckplayer.vip/jiexi/?url="
 			},
-
+			{
+				"name": "虾米2",
+				"type": "1,3",
+				"url": "https://jx.xmflv.cc/?url="
+			},
+            {
+				"name": "虾米",
+				"type": "1,3",
+				"url": "https://jx.xmflv.com/?url="
+			},
+            {
+				"name": "M3U8",
+				"type": "1,3",
+				"url": "https://jx.m3u8.tv/jiexi/?url="
+			},
             {
 				"name": "暂不支持",
 				"type": "2",
